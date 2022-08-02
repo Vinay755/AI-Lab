@@ -1,0 +1,20 @@
+% -------------------------------------------------------------------------------------------------------
+
+% Permuatation      input =list_permutation([a,b,c],X).
+del(X,[X|LIST1],LIST1).
+del(X,[Y|LIST],[Y|LIST1]):-del(X,LIST,LIST1).
+
+list_permutation([],[]).
+list_permutation(L,[X|P]):-del(X,L,L1),list_permutation(L1,P).
+
+
+% ---------------------------------------------------------------------------------------------------------
+% Memeber       input = list_member(b,[a,b,c]).
+list_member(X,[X|_]).
+list_member(X,[_|TAIL]) :- list_member(X,TAIL).
+
+% ---------------------------------------------------------------------------------------------------------
+% Concatenation         input = list_concat([1,2],[a,b,c],NewList).
+list_concat([],L,L).
+list_concat([X1|L1],L2,[X1|L3]) :- list_concat(L1,L2,L3).
+
