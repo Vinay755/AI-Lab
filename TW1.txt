@@ -1,0 +1,27 @@
+food(dosa).
+food(sandwich).
+food(pizza).
+lunch(X):-
+    food(X).
+dinner(pizza).
+
+meal(X):-
+    food(X).
+
+Input=food(X)
+
+studies(rama, ai).
+studies(jack, maths).
+studies(sita, physics).
+studies(ravi, biology).
+teaches(t1, ai).
+teaches(t2, maths).
+teaches(t3, physics).
+teaches(t4, biology).
+proffessor(X, Y):-
+	teaches(X, C),
+		studies(Y, C).
+
+Input=teaches(X,C).
+or
+studies(Y,C).
